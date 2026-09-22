@@ -74,7 +74,7 @@ a {
 }
 
 /* -------------------------
-   Logo Cell
+   Logo
    ------------------------- */
 
 .logo {
@@ -139,8 +139,6 @@ a {
     transform 0.35s var(--ease-out);
 }
 
-/* Navigation underline */
-
 .main-nav a::after {
   content: "";
 
@@ -160,10 +158,9 @@ a {
   transition: transform 0.4s var(--ease-out);
 }
 
-/* Slight swell on hover */
-
 .main-nav a:hover {
   color: var(--forest);
+
   transform: scale(1.06);
 }
 
@@ -171,8 +168,6 @@ a {
   transform: scaleX(1);
   transform-origin: left;
 }
-
-/* Active page */
 
 .main-nav a.active {
   color: var(--forest);
@@ -182,26 +177,16 @@ a {
   transform: scaleX(1);
 }
 
-/*
-When ANY nav item is being hovered,
-temporarily remove the active underline.
-*/
-
 .main-nav:hover a.active:not(:hover)::after {
   transform: scaleX(0);
 }
-
-/*
-If Home itself is hovered, its underline
-remains visible normally.
-*/
 
 .main-nav a.active:hover::after {
   transform: scaleX(1);
 }
 
 /* -------------------------
-   Quote Cell
+   Quote CTA
    ------------------------- */
 
 .header-cta {
@@ -218,17 +203,13 @@ remains visible normally.
 
   border-left: 1px solid rgba(31, 58, 46, 0.14);
 
-  /* Subtle green resting state */
   background: rgba(31, 58, 46, 0.055);
-
   color: var(--forest);
 
   transition:
     color 0.4s ease,
     background-color 0.4s ease;
 }
-
-/* CTA Text */
 
 .cta-text {
   white-space: nowrap;
@@ -241,14 +222,11 @@ remains visible normally.
   text-transform: uppercase;
 }
 
-/* Dark Green Hover Sweep */
-
 .header-cta::before {
   content: "";
 
   position: absolute;
   inset: 0;
-
   z-index: -1;
 
   background: var(--forest);
@@ -265,6 +243,7 @@ remains visible normally.
 .header-cta:hover::before {
   transform: translateY(0);
 }
+
 /* -------------------------
    Scrolled Header
    ------------------------- */
@@ -291,8 +270,6 @@ remains visible normally.
   bottom: 19px;
 }
 
-/* Hide header while scrolling down */
-
 .site-header.header-hidden {
   transform: translateY(-100%);
 }
@@ -316,7 +293,7 @@ remains visible normally.
 }
 
 /* -------------------------
-   Animated Hero Image
+   Hero Image
    ------------------------- */
 
 .hero::before {
@@ -381,6 +358,7 @@ remains visible normally.
   font-family: var(--serif);
   font-size: clamp(3.5rem, 5.5vw, 6.2rem);
   font-weight: 500;
+
   line-height: 0.98;
   letter-spacing: -0.03em;
 }
@@ -402,6 +380,7 @@ remains visible normally.
 
 .hero-actions {
   display: flex;
+
   gap: 1rem;
 }
 
@@ -422,6 +401,7 @@ remains visible normally.
 
   font-size: 0.78rem;
   font-weight: 600;
+
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
@@ -431,8 +411,6 @@ remains visible normally.
     border-color 0.3s ease,
     transform 0.3s var(--ease-out);
 }
-
-/* Primary Button */
 
 .btn-primary {
   background: var(--cream);
@@ -444,8 +422,6 @@ remains visible normally.
 
   transform: translateY(-2px);
 }
-
-/* Outline Button */
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.75);
@@ -459,8 +435,6 @@ remains visible normally.
 
   transform: translateY(-2px);
 }
-
-/* Button Arrow */
 
 .btn span {
   display: inline-block;
@@ -532,6 +506,7 @@ remains visible normally.
 .scroll-indicator span {
   font-size: 0.62rem;
   font-weight: 500;
+
   letter-spacing: 0.2em;
   text-transform: uppercase;
 
@@ -566,155 +541,8 @@ remains visible normally.
 }
 
 /* =========================================================
-   8. KEYFRAMES
+   8. SERVICES INTRO
    ========================================================= */
-
-@keyframes heroImageReveal {
-  from {
-    transform: scale(1.06);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes heroContentReveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scrollIndicatorReveal {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scrollLineMove {
-  0% {
-    transform: translateY(0);
-  }
-
-  60%,
-  100% {
-    transform: translateY(200%);
-  }
-}
-
-/* =========================================================
-   9. TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-  .site-header {
-    grid-template-columns: 1fr auto;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .logo {
-    justify-content: flex-start;
-
-    border-right: none;
-  }
-
-  .header-cta {
-    min-width: 200px;
-  }
-
-  .hero::before {
-    background-position: 60% center;
-  }
-}
-
-/* =========================================================
-   10. MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-  .site-header,
-  .site-header.scrolled {
-    height: 78px;
-
-    grid-template-columns: 1fr auto;
-  }
-
-  .logo {
-    padding: 0 1.25rem;
-  }
-
-  .logo img,
-  .site-header.scrolled .logo img {
-    width: 150px;
-    height: 62px;
-  }
-
-  .header-cta {
-    min-width: auto;
-
-    padding: 0 1.25rem;
-
-    font-size: 0.65rem;
-  }
-
-  .hero {
-    min-height: calc(100vh - 78px);
-
-    padding: 4rem 1.5rem;
-  }
-
-  .hero::before {
-    background-position: 60% center;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 14vw, 4.5rem);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .scroll-indicator {
-    bottom: 1rem;
-  }
-}
-
-/* =========================================================
-   11. REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-
-    transition-duration: 0.01ms !important;
-  }
-}
-/* =========================
-
-   SERVICES INTRO
-
-   ========================= */
 
 .services-intro {
   position: relative;
@@ -725,26 +553,16 @@ remains visible normally.
   background: linear-gradient(
     180deg,
     var(--cream) 0%,
-
     var(--cream) 48%,
-
     #eef0e8 48%,
-
     #eef0e8 100%
   );
 
   overflow: hidden;
 }
 
-/* -------------------------
-
-   Services Container
-
-   ------------------------- */
-
 .services-container {
   position: relative;
-
   z-index: 1;
 
   width: min(1180px, 100%);
@@ -753,11 +571,34 @@ remains visible normally.
 }
 
 /* -------------------------
-   Section Heading
+   Background Wordmark
+   ------------------------- */
+
+.services-watermark {
+  position: absolute;
+
+  top: 3rem;
+  right: -1rem;
+
+  font-family: var(--serif);
+  font-size: clamp(7rem, 14vw, 14rem);
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: rgba(31, 58, 46, 0.035);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* -------------------------
+   Services Heading
    ------------------------- */
 
 .services-heading {
   max-width: 760px;
+
   margin-bottom: clamp(5rem, 8vw, 8rem);
 }
 
@@ -777,7 +618,6 @@ remains visible normally.
   margin-bottom: 1.75rem;
 
   font-family: var(--serif);
-
   font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 500;
 
@@ -796,9 +636,9 @@ remains visible normally.
   color: rgba(43, 43, 43, 0.72);
 }
 
-/* -------------------------
-   Services Grid
-   ------------------------- */
+/* =========================================================
+   9. SERVICES GRID
+   ========================================================= */
 
 .services-grid {
   position: relative;
@@ -807,49 +647,109 @@ remains visible normally.
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  background: rgba(247, 244, 237, 0.72);
+  background: var(--forest);
 
-  border: 1px solid rgba(31, 58, 46, 0.18);
+  border: 1px solid rgba(31, 58, 46, 0.22);
 }
 
-/* -------------------------
-   Service Item
-   ------------------------- */
+/* =========================================================
+   10. SERVICE CARDS — DESKTOP
+   ========================================================= */
 
 .service-item {
   position: relative;
 
-  min-height: 390px;
+  min-width: 0;
+  min-height: 520px;
 
   display: flex;
   flex-direction: column;
 
-  padding: 2rem 2.5rem 2.5rem;
-
-  color: var(--charcoal);
-
   overflow: hidden;
+  isolation: isolate;
 
-  transition:
-    background-color 0.5s var(--ease-out),
-    color 0.5s var(--ease-out),
-    transform 0.5s var(--ease-out);
+  background: var(--forest);
+  color: var(--cream);
 }
 
 .service-item + .service-item {
-  border-left: 1px solid rgba(31, 58, 46, 0.18);
+  border-left: 1px solid rgba(247, 244, 237, 0.16);
 }
 
 /* -------------------------
-   Service Number
+   Full-Card Image
    ------------------------- */
+
+.service-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  background: var(--forest);
+
+  transition: opacity 0.65s ease;
+}
+
+.service-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.08);
+
+  transition: transform 1.1s var(--ease-out);
+}
+
+.service-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(10, 18, 13, 0.18) 0%,
+    rgba(10, 18, 13, 0.3) 42%,
+    rgba(10, 18, 13, 0.82) 100%
+  );
+
+  pointer-events: none;
+
+  transition: background 0.6s ease;
+}
+
+/* -------------------------
+   Service Body
+   ------------------------- */
+
+.service-body {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2.5rem;
+
+  transition: transform 0.55s var(--ease-out);
+}
 
 .service-number {
   display: block;
 
-  margin-bottom: 4rem;
-
-  color: var(--sage);
+  color: rgba(247, 244, 237, 0.55);
 
   font-size: 0.68rem;
   font-weight: 600;
@@ -857,13 +757,9 @@ remains visible normally.
   letter-spacing: 0.12em;
 
   transition:
-    color 0.4s ease,
-    transform 0.45s var(--ease-out);
+    color 0.45s ease,
+    transform 0.55s var(--ease-out);
 }
-
-/* -------------------------
-   Service Content
-   ------------------------- */
 
 .service-content {
   margin-top: auto;
@@ -873,32 +769,32 @@ remains visible normally.
   margin-bottom: 1.5rem;
 
   font-family: var(--serif);
-
   font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 500;
 
   line-height: 1.05;
   letter-spacing: -0.025em;
 
-  color: var(--forest);
+  color: var(--cream);
 
   transition:
-    color 0.4s ease,
-    transform 0.45s var(--ease-out);
+    color 0.45s ease,
+    transform 0.55s var(--ease-out);
 }
 
 .service-content p {
-  max-width: 290px;
+  max-width: 310px;
+
   margin-bottom: 2rem;
 
   font-size: 0.88rem;
   line-height: 1.7;
 
-  color: rgba(43, 43, 43, 0.68);
+  color: rgba(247, 244, 237, 0.7);
 
   transition:
-    color 0.4s ease,
-    transform 0.45s var(--ease-out);
+    color 0.45s ease,
+    transform 0.55s var(--ease-out);
 }
 
 /* -------------------------
@@ -914,6 +810,8 @@ remains visible normally.
   gap: 0.8rem;
 
   padding-bottom: 0.4rem;
+
+  color: var(--cream);
 
   font-size: 0.68rem;
   font-weight: 600;
@@ -942,34 +840,39 @@ remains visible normally.
 }
 
 .service-link span {
+  display: inline-block;
+
   transition: transform 0.35s var(--ease-out);
 }
 
-/* =========================
-   SERVICE HOVER
-   ========================= */
+/* =========================================================
+   11. SERVICE CARD HOVER — DESKTOP
+   ========================================================= */
 
-.service-item:hover {
-  background: var(--forest);
-  color: var(--cream);
+.service-item:hover .service-image {
+  opacity: 1;
 }
 
-.service-item:hover .service-number {
-  color: rgba(247, 244, 237, 0.55);
-
-  transform: translateY(-4px);
+.service-item:hover .service-image img {
+  transform: scale(1);
 }
 
-.service-item:hover h3 {
-  color: var(--cream);
-
+.service-item:hover .service-body {
   transform: translateY(-5px);
 }
 
-.service-item:hover p {
-  color: rgba(247, 244, 237, 0.72);
+.service-item:hover .service-number {
+  color: rgba(247, 244, 237, 0.82);
 
+  transform: translateY(-2px);
+}
+
+.service-item:hover h3 {
   transform: translateY(-3px);
+}
+
+.service-item:hover p {
+  color: rgba(247, 244, 237, 0.9);
 }
 
 .service-item:hover .service-link::after {
@@ -981,9 +884,9 @@ remains visible normally.
   transform: translateX(5px);
 }
 
-/* =========================
-   SCROLL REVEAL
-   ========================= */
+/* =========================================================
+   12. SCROLL REVEAL
+   ========================================================= */
 
 .reveal {
   opacity: 0;
@@ -1003,67 +906,502 @@ remains visible normally.
   transform: translateY(0);
 }
 
-/* =========================
-   SERVICES RESPONSIVE
-   ========================= */
+/* =========================================================
+   13. KEYFRAMES
+   ========================================================= */
+
+@keyframes heroImageReveal {
+  from {
+    transform: scale(1.06);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollIndicatorReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLineMove {
+  0% {
+    transform: translateY(0);
+  }
+
+  60%,
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* =========================================================
+   14. TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
+  /* -------------------------
+     Header
+     ------------------------- */
+
+  .site-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .logo {
+    justify-content: flex-start;
+
+    border-right: none;
+  }
+
+  .header-cta {
+    min-width: 200px;
+  }
+
+  /* -------------------------
+     Hero
+     ------------------------- */
+
+  .hero::before {
+    background-position: 60% center;
+  }
+
+  /* -------------------------
+     Services Grid
+     ------------------------- */
+
   .services-grid {
     grid-template-columns: 1fr;
+
+    background: transparent;
+
+    border: none;
   }
 
   .service-item {
-    min-height: 320px;
+    min-height: 0;
 
-    border-left: 0;
-    border-bottom: 1px solid rgba(31, 58, 46, 0.18);
+    background: var(--forest);
+    color: var(--cream);
+
+    border: none;
   }
 
   .service-item + .service-item {
-    border-left: 0;
+    border: none;
   }
 
-  .service-item:last-child {
-    border-bottom: 0;
+  /* -------------------------
+     Permanently Visible Images
+     ------------------------- */
+
+  .service-image {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+
+    width: 100%;
+    height: clamp(260px, 52vw, 430px);
+
+    flex-shrink: 0;
+
+    opacity: 1;
+
+    background: var(--stone);
+  }
+
+  .service-image img {
+    transform: none;
+  }
+
+  .service-image::after {
+    background: linear-gradient(
+      180deg,
+      transparent 65%,
+      rgba(10, 18, 13, 0.12) 100%
+    );
+  }
+
+  /* -------------------------
+     Tablet Content Panels
+     ------------------------- */
+
+  .service-body {
+    min-height: 330px;
+
+    padding: 2.5rem;
+
+    background: var(--forest);
+    color: var(--cream);
+
+    transform: none;
   }
 
   .service-number {
     margin-bottom: 3rem;
+
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .service-content h3 {
+    color: var(--cream);
+  }
+
+  .service-content p {
+    color: rgba(247, 244, 237, 0.72);
+  }
+
+  .service-link {
+    color: var(--cream);
+  }
+
+  /* -------------------------
+     Disable Desktop Movement
+     ------------------------- */
+
+  .service-item:hover .service-body,
+  .service-item:hover .service-number,
+  .service-item:hover h3 {
+    transform: none;
+  }
+
+  .service-item:hover .service-number {
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .service-item:hover p {
+    color: rgba(247, 244, 237, 0.72);
   }
 }
 
+/* =========================================================
+   15. MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
+  /* =======================================================
+     HEADER
+     ======================================================= */
+
+  .site-header,
+  .site-header.scrolled {
+    height: 78px;
+
+    grid-template-columns: 1fr auto;
+  }
+
+  .logo {
+    padding: 0 1.25rem;
+  }
+
+  .logo img,
+  .site-header.scrolled .logo img {
+    width: 150px;
+    height: 62px;
+  }
+
+  .header-cta {
+    min-width: auto;
+
+    padding: 0 1.25rem;
+  }
+
+  .cta-text {
+    font-size: 0.62rem;
+
+    letter-spacing: 0.055em;
+  }
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero {
+    min-height: calc(100vh - 78px);
+
+    padding: 4rem 1.5rem;
+  }
+
+  .hero::before {
+    background-position: 60% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  /* =======================================================
+     SERVICES INTRO
+     ======================================================= */
+
   .services-intro {
-    padding: 6rem 1.5rem 5rem;
+    padding: 6rem 1.5rem 4rem;
   }
 
   .services-heading {
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
+
+  .services-watermark {
+    top: 4rem;
+    right: -2rem;
+
+    font-size: clamp(6rem, 28vw, 9rem);
+  }
+
+  /* =======================================================
+     SERVICES GRID
+     ======================================================= */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    background: transparent;
+
+    border: none;
+  }
+
+  /* =======================================================
+     SERVICE CARDS
+     ======================================================= */
 
   .service-item {
-    min-height: 300px;
+    min-height: 0;
 
-    padding: 1.75rem;
+    background: transparent;
+
+    color: var(--cream);
+
+    border: none;
+  }
+
+  .service-item + .service-item {
+    border: none;
+  }
+
+  /* =======================================================
+     SERVICE IMAGES
+     ======================================================= */
+
+  .service-image {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+
+    width: 100%;
+    height: 210px;
+
+    flex-shrink: 0;
+
+    opacity: 1;
+
+    background: var(--stone);
+
+    border: none;
+    border-bottom: 1px solid rgba(247, 244, 237, 0.16);
+  }
+
+  .service-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: none;
+  }
+
+  .service-image::after {
+    background: linear-gradient(
+      180deg,
+      transparent 72%,
+      rgba(10, 18, 13, 0.1) 100%
+    );
+  }
+
+  /* =======================================================
+     DARK PANELS
+     Landscape + Outdoor Living
+     ======================================================= */
+
+  .service-body {
+    min-height: 0;
+
+    padding: 2rem 2rem 2.25rem;
+
+    background: var(--forest);
+    color: var(--cream);
+
+    border: none;
+
+    transform: none;
+  }
+
+  .service-number {
+    margin-bottom: 2.25rem;
+
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .service-content {
+    margin-top: 0;
+  }
+
+  .service-content h3 {
+    margin-bottom: 1.25rem;
+
+    font-size: clamp(2rem, 10vw, 2.65rem);
+
+    color: var(--cream);
+  }
+
+  .service-content p {
+    max-width: none;
+
+    margin-bottom: 1.75rem;
+
+    font-size: 0.9rem;
+    line-height: 1.65;
+
+    color: rgba(247, 244, 237, 0.72);
+  }
+
+  .service-link {
+    color: var(--cream);
+  }
+
+  /* =======================================================
+     HARDSCAPE PANEL
+     Cream Alternating Panel
+     ======================================================= */
+
+  .service-item:nth-child(2) .service-body {
+    background: var(--cream);
+    color: var(--forest);
+  }
+
+  .service-item:nth-child(2) .service-number {
+    color: var(--sage);
+  }
+
+  .service-item:nth-child(2) .service-content h3 {
+    color: var(--forest);
+  }
+
+  .service-item:nth-child(2) .service-content p {
+    color: rgba(43, 43, 43, 0.7);
+  }
+
+  .service-item:nth-child(2) .service-link {
+    color: var(--forest);
+  }
+
+  /* =======================================================
+     IMAGE / PANEL HAIRLINES
+     ======================================================= */
+
+  /* Landscape image -> dark panel */
+
+  .service-item:nth-child(1) .service-image {
+    border-bottom-color: rgba(247, 244, 237, 0.16);
+  }
+
+  /* Hardscape image -> cream panel */
+
+  .service-item:nth-child(2) .service-image {
+    border-bottom-color: rgba(31, 58, 46, 0.18);
+  }
+
+  /* Outdoor image -> dark panel */
+
+  .service-item:nth-child(3) .service-image {
+    border-bottom-color: rgba(247, 244, 237, 0.16);
+  }
+
+  /* =======================================================
+     TOUCH / HOVER NORMALIZATION
+     ======================================================= */
+
+  .service-item:hover .service-body,
+  .service-item:hover .service-number,
+  .service-item:hover h3 {
+    transform: none;
+  }
+
+  .service-item:nth-child(1):hover .service-number,
+  .service-item:nth-child(3):hover .service-number {
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .service-item:nth-child(1):hover p,
+  .service-item:nth-child(3):hover p {
+    color: rgba(247, 244, 237, 0.72);
+  }
+
+  .service-item:nth-child(2):hover .service-number {
+    color: var(--sage);
+  }
+
+  .service-item:nth-child(2):hover h3 {
+    color: var(--forest);
+  }
+
+  .service-item:nth-child(2):hover p {
+    color: rgba(43, 43, 43, 0.7);
+  }
+
+  .service-item:nth-child(2):hover .service-link {
+    color: var(--forest);
   }
 }
-/* -------------------------
-   Background Wordmark
-   ------------------------- */
 
-.services-watermark {
-  position: absolute;
+/* =========================================================
+   16. REDUCED MOTION
+   ========================================================= */
 
-  top: 3rem;
-  right: -1rem;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
 
-  font-family: var(--serif);
-  font-size: clamp(7rem, 14vw, 14rem);
-  font-weight: 500;
-  line-height: 1;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
 
-  color: rgba(31, 58, 46, 0.035);
-
-  pointer-events: none;
-  user-select: none;
+    transition-duration: 0.01ms !important;
+  }
 }

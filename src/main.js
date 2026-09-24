@@ -47,3 +47,22 @@ const revealObserver = new IntersectionObserver(
 revealElements.forEach((element) => {
   revealObserver.observe(element);
 });
+
+/* =========================================================
+   BEFORE / AFTER COMPARISON SLIDER
+   ========================================================= */
+
+const comparisonSlider = document.querySelector(".comparison-slider");
+const comparisonRange = document.querySelector(".comparison-range");
+
+if (comparisonSlider && comparisonRange) {
+  const updateComparison = (value) => {
+    comparisonSlider.style.setProperty("--comparison-position", `${value}%`);
+  };
+
+  comparisonRange.addEventListener("input", (event) => {
+    updateComparison(event.target.value);
+  });
+
+  updateComparison(comparisonRange.value);
+}

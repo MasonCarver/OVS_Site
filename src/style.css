@@ -37,16 +37,20 @@ html {
 
 body {
   min-height: 100vh;
-
   font-family: var(--sans);
   color: var(--charcoal);
-
   background: var(--cream);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
 }
 
 /* =========================================================
@@ -72,10 +76,6 @@ a {
     box-shadow 0.4s ease,
     transform 0.45s var(--ease-out);
 }
-
-/* -------------------------
-   Logo
-   ------------------------- */
 
 .logo {
   display: flex;
@@ -105,10 +105,6 @@ a {
   transform: translateY(-2px);
 }
 
-/* -------------------------
-   Main Navigation
-   ------------------------- */
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -129,6 +125,7 @@ a {
 
   font-size: 0.8rem;
   font-weight: 600;
+
   letter-spacing: 0.09em;
   text-transform: uppercase;
 
@@ -143,7 +140,6 @@ a {
   content: "";
 
   position: absolute;
-
   left: 0;
   bottom: 28px;
 
@@ -160,7 +156,6 @@ a {
 
 .main-nav a:hover {
   color: var(--forest);
-
   transform: scale(1.06);
 }
 
@@ -184,10 +179,6 @@ a {
 .main-nav a.active:hover::after {
   transform: scaleX(1);
 }
-
-/* -------------------------
-   Quote CTA
-   ------------------------- */
 
 .header-cta {
   position: relative;
@@ -244,10 +235,6 @@ a {
   transform: translateY(0);
 }
 
-/* -------------------------
-   Scrolled Header
-   ------------------------- */
-
 .site-header.scrolled {
   height: 76px;
 
@@ -292,10 +279,6 @@ a {
   isolation: isolate;
 }
 
-/* -------------------------
-   Hero Image
-   ------------------------- */
-
 .hero::before {
   content: "";
 
@@ -312,10 +295,6 @@ a {
   animation: heroImageReveal 1.8s var(--ease-out) forwards;
 }
 
-/* -------------------------
-   Hero Overlay
-   ------------------------- */
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -329,10 +308,6 @@ a {
     rgba(10, 18, 13, 0.03) 100%
   );
 }
-
-/* -------------------------
-   Hero Content
-   ------------------------- */
 
 .hero-content {
   position: relative;
@@ -348,6 +323,7 @@ a {
 
   font-size: 0.75rem;
   font-weight: 600;
+
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
@@ -374,13 +350,8 @@ a {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* =========================================================
-   5. HERO BUTTONS
-   ========================================================= */
-
 .hero-actions {
   display: flex;
-
   gap: 1rem;
 }
 
@@ -419,36 +390,28 @@ a {
 
 .btn-primary:hover {
   background: var(--stone);
-
   transform: translateY(-2px);
 }
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.75);
-
   color: var(--white);
 }
 
 .btn-outline:hover {
   background: var(--white);
   color: var(--forest);
-
   transform: translateY(-2px);
 }
 
 .btn span {
   display: inline-block;
-
   transition: transform 0.3s var(--ease-out);
 }
 
 .btn:hover span {
   transform: translateX(5px);
 }
-
-/* =========================================================
-   6. HERO ENTRANCE ANIMATION
-   ========================================================= */
 
 .eyebrow,
 .hero h1,
@@ -476,10 +439,6 @@ a {
 .hero-actions {
   animation-delay: 0.7s;
 }
-
-/* =========================================================
-   7. SCROLL INDICATOR
-   ========================================================= */
 
 .scroll-indicator {
   position: absolute;
@@ -541,7 +500,7 @@ a {
 }
 
 /* =========================================================
-   8. SERVICES INTRO
+   5. SERVICES
    ========================================================= */
 
 .services-intro {
@@ -550,6 +509,8 @@ a {
   padding: clamp(7rem, 10vw, 10rem) clamp(2rem, 6vw, 7rem)
     clamp(6rem, 9vw, 9rem);
 
+  overflow: hidden;
+
   background: linear-gradient(
     180deg,
     var(--cream) 0%,
@@ -557,8 +518,6 @@ a {
     #eef0e8 48%,
     #eef0e8 100%
   );
-
-  overflow: hidden;
 }
 
 .services-container {
@@ -570,10 +529,6 @@ a {
   margin: 0 auto;
 }
 
-/* -------------------------
-   Background Wordmark
-   ------------------------- */
-
 .services-watermark {
   position: absolute;
 
@@ -583,7 +538,6 @@ a {
   font-family: var(--serif);
   font-size: clamp(7rem, 14vw, 14rem);
   font-weight: 500;
-
   line-height: 1;
 
   color: rgba(31, 58, 46, 0.035);
@@ -591,10 +545,6 @@ a {
   pointer-events: none;
   user-select: none;
 }
-
-/* -------------------------
-   Services Heading
-   ------------------------- */
 
 .services-heading {
   max-width: 760px;
@@ -636,10 +586,6 @@ a {
   color: rgba(43, 43, 43, 0.72);
 }
 
-/* =========================================================
-   9. SERVICES GRID
-   ========================================================= */
-
 .services-grid {
   position: relative;
   z-index: 2;
@@ -651,10 +597,6 @@ a {
 
   border: 1px solid rgba(31, 58, 46, 0.22);
 }
-
-/* =========================================================
-   10. SERVICE CARDS — DESKTOP
-   ========================================================= */
 
 .service-item {
   position: relative;
@@ -675,10 +617,6 @@ a {
 .service-item + .service-item {
   border-left: 1px solid rgba(247, 244, 237, 0.16);
 }
-
-/* -------------------------
-   Full-Card Image
-   ------------------------- */
 
 .service-image {
   position: absolute;
@@ -727,10 +665,6 @@ a {
 
   transition: background 0.6s ease;
 }
-
-/* -------------------------
-   Service Body
-   ------------------------- */
 
 .service-body {
   position: relative;
@@ -785,69 +719,15 @@ a {
 .service-content p {
   max-width: 310px;
 
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 
   font-size: 0.88rem;
   line-height: 1.7;
 
   color: rgba(247, 244, 237, 0.7);
 
-  transition:
-    color 0.45s ease,
-    transform 0.55s var(--ease-out);
+  transition: color 0.45s ease;
 }
-
-/* -------------------------
-   Explore Link
-   ------------------------- */
-
-.service-link {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-
-  gap: 0.8rem;
-
-  padding-bottom: 0.4rem;
-
-  color: var(--cream);
-
-  font-size: 0.68rem;
-  font-weight: 600;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.service-link::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 1px;
-
-  background: currentColor;
-
-  transform: scaleX(0);
-  transform-origin: right;
-
-  transition: transform 0.45s var(--ease-out);
-}
-
-.service-link span {
-  display: inline-block;
-
-  transition: transform 0.35s var(--ease-out);
-}
-
-/* =========================================================
-   11. SERVICE CARD HOVER — DESKTOP
-   ========================================================= */
 
 .service-item:hover .service-image {
   opacity: 1;
@@ -863,7 +743,6 @@ a {
 
 .service-item:hover .service-number {
   color: rgba(247, 244, 237, 0.82);
-
   transform: translateY(-2px);
 }
 
@@ -875,36 +754,23 @@ a {
   color: rgba(247, 244, 237, 0.9);
 }
 
-.service-item:hover .service-link::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.service-item:hover .service-link span {
-  transform: translateX(5px);
-}
-
 /* =========================================================
-   OUR WORK
+   6. OUR WORK
    ========================================================= */
 
 .our-work {
   position: relative;
 
-  background: var(--cream);
-
   overflow: hidden;
-}
 
-/* =========================================================
-   WORK INTRO
-   ========================================================= */
+  background: var(--cream);
+}
 
 .work-intro {
   position: relative;
 
   padding: clamp(7rem, 10vw, 10rem) clamp(2rem, 6vw, 7rem)
-    clamp(10rem, 15vw, 14rem);
+    clamp(6rem, 8vw, 8rem);
 
   overflow: hidden;
 
@@ -927,10 +793,6 @@ a {
   margin: 0 auto;
 }
 
-/* -------------------------
-   Work Watermark
-   ------------------------- */
-
 .work-watermark {
   position: absolute;
 
@@ -948,10 +810,6 @@ a {
   pointer-events: none;
   user-select: none;
 }
-
-/* -------------------------
-   Work Heading
-   ------------------------- */
 
 .work-eyebrow {
   color: rgba(247, 244, 237, 0.58);
@@ -981,14 +839,10 @@ a {
   color: rgba(247, 244, 237, 0.7);
 }
 
-/* =========================================================
-   WORK SHOWCASE
-   ========================================================= */
-
 .work-showcase {
   position: relative;
 
-  padding: 0 clamp(2rem, 6vw, 7rem) clamp(7rem, 10vw, 10rem);
+  padding: 0 clamp(2rem, 6vw, 7rem) clamp(3rem, 5vw, 4.5rem);
 
   background: var(--cream);
 }
@@ -1000,10 +854,6 @@ a {
 
   margin: 0 auto;
 }
-
-/* =========================================================
-   BEFORE / AFTER SLIDER
-   ========================================================= */
 
 .comparison-slider {
   --comparison-position: 50%;
@@ -1032,10 +882,6 @@ a {
   touch-action: pan-y;
 }
 
-/* -------------------------
-   After Image
-   ------------------------- */
-
 .comparison-after {
   position: absolute;
   inset: 0;
@@ -1050,10 +896,6 @@ a {
 
   pointer-events: none;
 }
-
-/* -------------------------
-   Before Image
-   ------------------------- */
 
 .comparison-before {
   position: absolute;
@@ -1081,10 +923,6 @@ a {
 
   pointer-events: none;
 }
-
-/* =========================================================
-   BEFORE / AFTER LABELS
-   ========================================================= */
 
 .comparison-label {
   position: absolute;
@@ -1117,10 +955,6 @@ a {
   right: 1.5rem;
 }
 
-/* =========================================================
-   COMPARISON DIVIDER
-   ========================================================= */
-
 .comparison-divider {
   position: absolute;
 
@@ -1139,10 +973,6 @@ a {
 
   pointer-events: none;
 }
-
-/* -------------------------
-   Drag Handle
-   ------------------------- */
 
 .comparison-handle {
   position: absolute;
@@ -1179,13 +1009,8 @@ a {
 
 .comparison-handle span {
   position: relative;
-
   top: -1px;
 }
-
-/* =========================================================
-   INVISIBLE NATIVE RANGE INPUT
-   ========================================================= */
 
 .comparison-range {
   position: absolute;
@@ -1203,10 +1028,6 @@ a {
   cursor: ew-resize;
 }
 
-/* =========================================================
-   PROJECT INFORMATION
-   ========================================================= */
-
 .work-project-info {
   display: grid;
 
@@ -1222,10 +1043,6 @@ a {
 
   padding-top: 2.5rem;
 }
-
-/* -------------------------
-   Project Title
-   ------------------------- */
 
 .work-project-title {
   grid-area: title;
@@ -1265,10 +1082,6 @@ a {
   color: rgba(43, 43, 43, 0.5);
 }
 
-/* -------------------------
-   Project Services
-   ------------------------- */
-
 .work-project-services {
   grid-area: services;
 
@@ -1295,15 +1108,10 @@ a {
   content: "•";
 
   position: absolute;
-
   left: -0.78rem;
 
   color: var(--sage);
 }
-
-/* =========================================================
-   SEE MORE WORK LINK
-   ========================================================= */
 
 .work-link {
   position: relative;
@@ -1362,7 +1170,855 @@ a {
 }
 
 /* =========================================================
-   12. SCROLL REVEAL
+   7. ABOUT
+   ========================================================= */
+
+.about {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  height: 620px;
+
+  background: var(--forest);
+}
+
+.about-image {
+  position: relative;
+
+  min-width: 0;
+  height: 620px;
+
+  overflow: hidden;
+}
+
+.about-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 42% center;
+
+  transition: transform 1.2s var(--ease-out);
+}
+
+.about-image:hover img {
+  transform: scale(1.015);
+}
+
+.about-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: clamp(3.5rem, 5vw, 5rem) clamp(3rem, 5vw, 6rem);
+
+  overflow: hidden;
+
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.about-watermark {
+  position: absolute;
+
+  top: -35px;
+  right: -55px;
+  z-index: 1;
+
+  width: clamp(300px, 30vw, 500px);
+  height: auto;
+
+  opacity: 0.055;
+
+  transform: rotate(-10deg);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.about-eyebrow {
+  margin-bottom: 1.5rem;
+
+  color: rgba(247, 244, 237, 0.65);
+}
+
+.about-rule {
+  width: 64px;
+  height: 1px;
+
+  margin-bottom: 2rem;
+
+  background: rgba(247, 244, 237, 0.5);
+}
+
+.about-copy h2 {
+  max-width: 650px;
+
+  margin-bottom: 2.5rem;
+
+  font-family: var(--serif);
+  font-size: clamp(3.3rem, 5vw, 5.6rem);
+  font-weight: 500;
+
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+
+  color: var(--cream);
+}
+
+.about-description {
+  max-width: 620px;
+}
+
+.about-description p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+
+  color: rgba(247, 244, 237, 0.74);
+}
+
+.about-description p + p {
+  margin-top: 1.25rem;
+}
+
+.about-values {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 2.5rem;
+}
+
+.about-value {
+  min-height: 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 0.8rem;
+
+  padding: 0 1.25rem;
+
+  text-align: center;
+}
+
+.about-value + .about-value {
+  border-left: 1px solid rgba(247, 244, 237, 0.2);
+}
+
+.about-icon {
+  width: 30px;
+  height: 30px;
+
+  fill: none;
+  stroke: var(--cream);
+
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-value span {
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(247, 244, 237, 0.9);
+}
+
+/* =========================================================
+   8. CONTACT
+   ========================================================= */
+
+.contact {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+
+  min-height: 760px;
+
+  background: var(--cream);
+}
+
+.contact-intro {
+  display: flex;
+  align-items: center;
+
+  padding: clamp(5rem, 8vw, 8rem) clamp(3rem, 7vw, 7rem);
+
+  background: var(--cream);
+}
+
+.contact-intro-inner {
+  width: min(570px, 100%);
+
+  margin: 0 auto;
+}
+
+.contact-eyebrow {
+  color: var(--sage);
+}
+
+.contact-rule {
+  width: 64px;
+  height: 1px;
+
+  margin: 1.5rem 0 2.5rem;
+
+  background: var(--forest);
+}
+
+.contact-intro h2 {
+  margin-bottom: 2rem;
+
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 5.2vw, 5.7rem);
+  font-weight: 500;
+
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+
+  color: var(--forest);
+}
+
+.contact-lead {
+  max-width: 560px;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: rgba(43, 43, 43, 0.72);
+}
+
+.contact-details {
+  margin-top: 3rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  padding: 1.4rem 0;
+
+  border-bottom: 1px solid rgba(31, 58, 46, 0.14);
+}
+
+.contact-detail:last-child {
+  border-bottom: none;
+}
+
+.contact-detail-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--stone);
+}
+
+.contact-detail-icon svg {
+  width: 24px;
+  height: 24px;
+
+  fill: none;
+  stroke: var(--forest);
+
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-detail-label {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  font-size: 0.62rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--sage);
+}
+
+.contact-detail-value {
+  display: block;
+
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.2;
+
+  color: var(--charcoal);
+}
+
+.contact-detail-sub {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  font-size: 0.67rem;
+  font-weight: 500;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: rgba(43, 43, 43, 0.48);
+}
+
+.contact-form-side {
+  display: flex;
+  align-items: center;
+
+  padding: clamp(4rem, 6vw, 6rem);
+
+  background:
+    linear-gradient(rgba(20, 38, 30, 0.12), rgba(20, 38, 30, 0.12)),
+    url("/images/contact-landscape.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-form-card {
+  position: relative;
+
+  width: min(680px, 100%);
+
+  padding: clamp(3rem, 5vw, 4.5rem);
+
+  overflow: hidden;
+
+  background: rgba(31, 58, 46, 0.97);
+  color: var(--cream);
+
+  box-shadow: 0 28px 80px rgba(14, 27, 21, 0.22);
+}
+
+.contact-watermark {
+  position: absolute;
+
+  top: -70px;
+  right: -80px;
+
+  width: 370px;
+  height: auto;
+
+  opacity: 0.04;
+
+  transform: rotate(-10deg);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-form-heading {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-eyebrow {
+  color: rgba(247, 244, 237, 0.6);
+}
+
+.contact-form-rule {
+  width: 64px;
+  height: 1px;
+
+  margin: 1.4rem 0 2rem;
+
+  background: rgba(247, 244, 237, 0.5);
+}
+
+.contact-form-heading h3 {
+  margin-bottom: 2.5rem;
+
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-weight: 500;
+
+  line-height: 1;
+  letter-spacing: -0.035em;
+
+  color: var(--cream);
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-name-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.form-field {
+  position: relative;
+
+  min-width: 0;
+
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  position: absolute;
+
+  top: 1rem;
+  left: 1.1rem;
+  z-index: 2;
+
+  font-size: 0.6rem;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(247, 244, 237, 0.7);
+
+  pointer-events: none;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+
+  border: 1px solid rgba(247, 244, 237, 0.3);
+  border-radius: 0;
+  outline: none;
+
+  background: transparent;
+  color: var(--cream);
+
+  font: inherit;
+
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.form-field input {
+  height: 64px;
+
+  padding: 1.8rem 1.1rem 0.5rem;
+}
+
+.form-field textarea {
+  min-height: 140px;
+
+  padding: 2.4rem 1.1rem 1rem;
+
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(247, 244, 237, 0.8);
+  background: rgba(247, 244, 237, 0.035);
+}
+
+.contact-submit {
+  width: 100%;
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.2rem;
+
+  margin-top: 0.5rem;
+
+  border: none;
+
+  background: var(--cream);
+  color: var(--forest);
+
+  cursor: pointer;
+
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s var(--ease-out);
+}
+
+.contact-submit:hover {
+  background: var(--stone);
+  transform: translateY(-2px);
+}
+
+.contact-submit span:last-child {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.contact-submit:hover span:last-child {
+  transform: translateX(5px);
+}
+
+.contact-response-note {
+  margin-top: 1rem;
+
+  text-align: center;
+
+  font-size: 0.72rem;
+
+  color: rgba(247, 244, 237, 0.58);
+}
+
+/* =========================================================
+   9. FOOTER — SIMPLE / SLIM
+   ========================================================= */
+
+.site-footer {
+  background: #172e25;
+  color: var(--cream);
+}
+
+/* =========================================================
+   MAIN FOOTER
+   Logo | Contact | Service Area | Follow
+   ========================================================= */
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1.8fr 1.8fr 1.1fr;
+
+  height: 120px;
+
+  border-bottom: 1px solid rgba(247, 244, 237, 0.12);
+}
+
+/* Every footer cell */
+
+.footer-logo-column,
+.footer-column {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 1rem 3rem;
+}
+
+/* Simple vertical dividers */
+
+.footer-inner > * + * {
+  border-left: 1px solid rgba(247, 244, 237, 0.12);
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.footer-logo-column {
+  align-items: flex-start;
+}
+
+.footer-logo {
+  display: block;
+
+  width: 140px;
+  max-width: 100%;
+}
+
+.footer-logo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   FOOTER TEXT
+   ========================================================= */
+
+.footer-heading {
+  margin: 0 0 0.75rem;
+
+  font-size: 0.52rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: rgba(247, 244, 237, 0.42);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.45rem;
+}
+
+.footer-contact a,
+.footer-contact p {
+  margin: 0;
+
+  font-size: 0.7rem;
+  line-height: 1.5;
+
+  color: rgba(247, 244, 237, 0.68);
+
+  white-space: nowrap;
+}
+
+.footer-contact a {
+  transition: color 0.25s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--cream);
+}
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.footer-social-column {
+  align-items: flex-start;
+}
+
+.footer-socials {
+  display: flex;
+
+  gap: 0.65rem;
+}
+
+.footer-social-link {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(247, 244, 237, 0.18);
+  border-radius: 50%;
+
+  color: var(--cream);
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.footer-social-link:hover {
+  border-color: rgba(247, 244, 237, 0.5);
+  background: rgba(247, 244, 237, 0.05);
+}
+
+.footer-social-link svg {
+  width: 14px;
+  height: 14px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-social-link[aria-label="Facebook"] svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* =========================================================
+   BOTTOM COPYRIGHT BAR
+   ========================================================= */
+
+.footer-bottom {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  font-size: 0.48rem;
+  font-weight: 500;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  color: rgba(247, 244, 237, 0.38);
+}
+
+.footer-credit {
+  text-align: right;
+}
+
+.footer-credit a {
+  color: rgba(247, 244, 237, 0.72);
+
+  transition: color 0.25s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--cream);
+}
+
+/* =========================================================
+   FOOTER — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+
+    height: auto;
+  }
+
+  .footer-logo-column,
+  .footer-column {
+    min-height: 120px;
+
+    padding: 1.5rem 2rem;
+  }
+
+  /* Reset desktop dividers */
+
+  .footer-inner > * + * {
+    border-left: none;
+  }
+
+  /* Right column */
+
+  .footer-inner > *:nth-child(even) {
+    border-left: 1px solid rgba(247, 244, 237, 0.12);
+  }
+
+  /* Second row */
+
+  .footer-inner > *:nth-child(n + 3) {
+    border-top: 1px solid rgba(247, 244, 237, 0.12);
+  }
+
+  .footer-logo {
+    width: 130px;
+  }
+
+  .footer-bottom {
+    padding: 0 2rem;
+  }
+}
+
+/* =========================================================
+   FOOTER — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+
+    height: auto;
+  }
+
+  .footer-logo-column,
+  .footer-column {
+    min-height: 105px;
+
+    padding: 1.25rem;
+  }
+
+  .footer-logo-column {
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    width: 105px;
+  }
+
+  .footer-heading {
+    margin-bottom: 0.6rem;
+
+    font-size: 0.46rem;
+  }
+
+  .footer-contact {
+    gap: 0.35rem;
+  }
+
+  .footer-contact a,
+  .footer-contact p {
+    font-size: 0.58rem;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer-bottom {
+    height: auto;
+    min-height: 52px;
+
+    gap: 1rem;
+
+    padding: 0.75rem 1.25rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.38rem;
+    line-height: 1.4;
+  }
+
+  .footer-credit {
+    text-align: right;
+  }
+}
+/* =========================================================
+   10. SHARED SCROLL REVEAL
    ========================================================= */
 
 .reveal {
@@ -1379,12 +2035,11 @@ a {
 
 .reveal.is-visible {
   opacity: 1;
-
   transform: translateY(0);
 }
 
 /* =========================================================
-   13. KEYFRAMES
+   11. KEYFRAMES
    ========================================================= */
 
 @keyframes heroImageReveal {
@@ -1400,13 +2055,11 @@ a {
 @keyframes heroContentReveal {
   from {
     opacity: 0;
-
     transform: translateY(24px);
   }
 
   to {
     opacity: 1;
-
     transform: translateY(0);
   }
 }
@@ -1433,16 +2086,26 @@ a {
 }
 
 /* =========================================================
-   14. TABLET
+   12. MOBILE NAVIGATION
+   ========================================================= */
+
+.cta-mobile-text,
+.mobile-menu-toggle,
+.mobile-menu {
+  display: none;
+}
+
+/* =========================================================
+   13. TABLET / MOBILE MENU — 900PX AND BELOW
    ========================================================= */
 
 @media (max-width: 900px) {
-  /* -------------------------
-     Header
-     ------------------------- */
-
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto 76px;
+  }
+
+  .site-header.scrolled {
+    grid-template-columns: 1fr auto 76px;
   }
 
   .main-nav {
@@ -1451,24 +2114,266 @@ a {
 
   .logo {
     justify-content: flex-start;
-
     border-right: none;
   }
 
   .header-cta {
-    min-width: 200px;
+    min-width: 150px;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 1002;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 76px;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+    border-left: 1px solid rgba(31, 58, 46, 0.14);
+
+    background: var(--cream);
+
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 1.5px;
+
+    background: var(--forest);
+
+    transform-origin: center;
+
+    transition:
+      transform 0.4s var(--ease-out),
+      background-color 0.3s ease;
+  }
+
+  .mobile-menu-toggle.is-open span:first-child {
+    transform: translateY(4.25px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.is-open span:last-child {
+    transform: translateY(-4.25px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+
+    display: block;
+
+    overflow: hidden;
+
+    background: var(--forest);
+    color: var(--cream);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-18px);
+
+    transition:
+      opacity 0.45s ease,
+      visibility 0.45s ease,
+      transform 0.55s var(--ease-out);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .mobile-menu-watermark {
+    position: absolute;
+
+    top: 7rem;
+    right: -3rem;
+
+    font-family: var(--serif);
+    font-size: clamp(7rem, 20vw, 13rem);
+    font-weight: 500;
+
+    line-height: 0.8;
+
+    color: rgba(247, 244, 237, 0.035);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .mobile-menu-inner {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: calc(104px + 4rem) clamp(2rem, 7vw, 5rem) 3rem;
+  }
+
+  .mobile-menu-eyebrow {
+    margin-bottom: 2.5rem;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .mobile-nav {
+    border-top: 1px solid rgba(247, 244, 237, 0.16);
+  }
+
+  .mobile-nav a {
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.3rem 0;
+
+    border-bottom: 1px solid rgba(247, 244, 237, 0.16);
+
+    color: var(--cream);
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+      opacity 0.45s ease,
+      transform 0.55s var(--ease-out),
+      color 0.3s ease;
+  }
+
+  .mobile-menu.is-open .mobile-nav a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.is-open .mobile-nav a:nth-child(1) {
+    transition-delay: 0.08s;
+  }
+
+  .mobile-menu.is-open .mobile-nav a:nth-child(2) {
+    transition-delay: 0.12s;
+  }
+
+  .mobile-menu.is-open .mobile-nav a:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+
+  .mobile-menu.is-open .mobile-nav a:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+
+  .mobile-menu.is-open .mobile-nav a:nth-child(5) {
+    transition-delay: 0.24s;
+  }
+
+  .mobile-nav-number {
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    color: var(--sage);
+  }
+
+  .mobile-nav-label {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.025em;
+  }
+
+  .mobile-nav-arrow {
+    font-size: 1.15rem;
+
+    color: rgba(247, 244, 237, 0.55);
+
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .mobile-nav a:hover .mobile-nav-arrow {
+    transform: translateX(5px);
+  }
+
+  .mobile-menu-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  .mobile-menu-footer p {
+    margin-bottom: 1rem;
+
+    font-size: 0.78rem;
+    line-height: 1.6;
+
+    color: rgba(247, 244, 237, 0.55);
+  }
+
+  .mobile-menu-quote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+
+    padding: 0 1.25rem;
+
+    background: var(--cream);
+    color: var(--forest);
+
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-quote span {
+    font-size: 1rem;
+
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .mobile-menu-quote:hover span {
+    transform: translateX(5px);
+  }
+
+  body.menu-open {
+    overflow: hidden;
   }
 
   /* -------------------------
-     Hero
-     ------------------------- */
-
-  .hero::before {
-    background-position: 60% center;
-  }
-
-  /* -------------------------
-     Services Grid
+     Services
      ------------------------- */
 
   .services-grid {
@@ -1491,10 +2396,6 @@ a {
   .service-item + .service-item {
     border: none;
   }
-
-  /* -------------------------
-     Permanently Visible Images
-     ------------------------- */
 
   .service-image {
     position: relative;
@@ -1523,10 +2424,6 @@ a {
     );
   }
 
-  /* -------------------------
-     Tablet Content Panels
-     ------------------------- */
-
   .service-body {
     min-height: 330px;
 
@@ -1552,14 +2449,6 @@ a {
     color: rgba(247, 244, 237, 0.72);
   }
 
-  .service-link {
-    color: var(--cream);
-  }
-
-  /* -------------------------
-     Disable Desktop Movement
-     ------------------------- */
-
   .service-item:hover .service-body,
   .service-item:hover .service-number,
   .service-item:hover h3 {
@@ -1574,12 +2463,12 @@ a {
     color: rgba(247, 244, 237, 0.72);
   }
 
-  /* =========================================================
-   OUR WORK — TABLET
-   ========================================================= */
+  /* -------------------------
+     Our Work
+     ------------------------- */
 
   .work-intro {
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
   }
 
   .work-intro-inner {
@@ -1614,49 +2503,214 @@ a {
   .work-link {
     justify-self: start;
   }
+
+  /* -------------------------
+     About
+     ------------------------- */
+
+  .about {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 480px;
+  }
+
+  .about-image img {
+    object-position: 42% 38%;
+  }
+
+  .about-content {
+    padding: 4.5rem 3rem;
+  }
+
+  .about-copy h2 {
+    max-width: 650px;
+
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .about-description {
+    max-width: 620px;
+  }
+
+  .about-watermark {
+    top: -35px;
+    right: -8rem;
+
+    width: 500px;
+
+    transform: rotate(-10deg);
+  }
+
+  /* -------------------------
+     Contact
+     ------------------------- */
+
+  .contact {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .contact-intro {
+    padding: 6rem 3rem;
+  }
+
+  .contact-intro-inner {
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .contact-form-side {
+    min-height: 760px;
+
+    padding: 4rem 3rem;
+  }
+
+  .contact-form-card {
+    margin: 0 auto;
+  }
+
+  /* -------------------------
+   Footer — Tablet
+   ------------------------- */
+
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-column,
+  .footer-logo-column {
+    min-height: 160px;
+
+    padding: 2rem 2.5rem;
+  }
+
+  /* Remove desktop divider logic */
+
+  .footer-logo-column,
+  .footer-inner > .footer-column:not(:first-child) {
+    border-left: none;
+  }
+
+  /* Two-column divider */
+
+  .footer-inner > *:nth-child(even) {
+    border-left: 1px solid rgba(247, 244, 237, 0.12);
+  }
+
+  /* Second row */
+
+  .footer-inner > *:nth-child(n + 3) {
+    border-top: 1px solid rgba(247, 244, 237, 0.12);
+  }
+
+  .footer-logo {
+    max-width: 145px;
+  }
 }
 
 /* =========================================================
-   15. MOBILE
+   14. MOBILE — 600PX AND BELOW
    ========================================================= */
 
 @media (max-width: 600px) {
-  /* =======================================================
-     HEADER
-     ======================================================= */
+  /* -------------------------
+     Header
+     ------------------------- */
 
   .site-header,
   .site-header.scrolled {
+    position: sticky;
+
     height: 78px;
 
-    grid-template-columns: 1fr auto;
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+
+    align-items: stretch;
+  }
+
+  .mobile-menu-toggle {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 64px;
+    height: 100%;
+
+    border-left: none;
+    border-right: 1px solid rgba(31, 58, 46, 0.14);
   }
 
   .logo {
-    padding: 0 1.25rem;
+    position: static;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 0;
+
+    padding: 0 0 0 1rem;
+
+    border: none;
+
+    transform: none;
   }
 
   .logo img,
   .site-header.scrolled .logo img {
-    width: 150px;
-    height: 62px;
+    width: 135px;
+    height: 58px;
+
+    object-fit: contain;
+  }
+
+  .logo:hover img {
+    transform: none;
   }
 
   .header-cta {
-    min-width: auto;
+    grid-column: 3;
+    grid-row: 1;
 
-    padding: 0 1.25rem;
+    min-width: 0;
+
+    padding: 0 1.15rem;
+
+    border-left: 1px solid rgba(31, 58, 46, 0.14);
+  }
+
+  .cta-desktop-text {
+    display: none;
+  }
+
+  .cta-mobile-text {
+    display: inline;
   }
 
   .cta-text {
-    font-size: 0.62rem;
-
-    letter-spacing: 0.055em;
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
   }
 
-  /* =======================================================
-     HERO
-     ======================================================= */
+  /* -------------------------
+     Mobile Menu Position
+     ------------------------- */
+
+  .mobile-menu-inner {
+    padding: calc(78px + 2.5rem) 1.5rem 2rem;
+  }
+
+  /* -------------------------
+     Hero
+     ------------------------- */
 
   .hero {
     min-height: calc(100vh - 78px);
@@ -1681,9 +2735,9 @@ a {
     bottom: 1rem;
   }
 
-  /* =======================================================
-     SERVICES INTRO
-     ======================================================= */
+  /* -------------------------
+     Services
+     ------------------------- */
 
   .services-intro {
     padding: 6rem 1.5rem 4rem;
@@ -1700,10 +2754,6 @@ a {
     font-size: clamp(6rem, 28vw, 9rem);
   }
 
-  /* =======================================================
-     SERVICES GRID
-     ======================================================= */
-
   .services-grid {
     grid-template-columns: 1fr;
 
@@ -1712,15 +2762,10 @@ a {
     border: none;
   }
 
-  /* =======================================================
-     SERVICE CARDS
-     ======================================================= */
-
   .service-item {
     min-height: 0;
 
     background: transparent;
-
     color: var(--cream);
 
     border: none;
@@ -1729,10 +2774,6 @@ a {
   .service-item + .service-item {
     border: none;
   }
-
-  /* =======================================================
-     SERVICE IMAGES
-     ======================================================= */
 
   .service-image {
     position: relative;
@@ -1771,11 +2812,6 @@ a {
     );
   }
 
-  /* =======================================================
-     DARK PANELS
-     Landscape + Outdoor Living
-     ======================================================= */
-
   .service-body {
     min-height: 0;
 
@@ -1810,22 +2846,13 @@ a {
   .service-content p {
     max-width: none;
 
-    margin-bottom: 1.75rem;
+    margin-bottom: 0;
 
     font-size: 0.9rem;
     line-height: 1.65;
 
     color: rgba(247, 244, 237, 0.72);
   }
-
-  .service-link {
-    color: var(--cream);
-  }
-
-  /* =======================================================
-     HARDSCAPE PANEL
-     Cream Alternating Panel
-     ======================================================= */
 
   .service-item:nth-child(2) .service-body {
     background: var(--cream);
@@ -1844,35 +2871,14 @@ a {
     color: rgba(43, 43, 43, 0.7);
   }
 
-  .service-item:nth-child(2) .service-link {
-    color: var(--forest);
-  }
-
-  /* =======================================================
-     IMAGE / PANEL HAIRLINES
-     ======================================================= */
-
-  /* Landscape image -> dark panel */
-
-  .service-item:nth-child(1) .service-image {
-    border-bottom-color: rgba(247, 244, 237, 0.16);
-  }
-
-  /* Hardscape image -> cream panel */
-
-  .service-item:nth-child(2) .service-image {
-    border-bottom-color: rgba(31, 58, 46, 0.18);
-  }
-
-  /* Outdoor image -> dark panel */
-
+  .service-item:nth-child(1) .service-image,
   .service-item:nth-child(3) .service-image {
     border-bottom-color: rgba(247, 244, 237, 0.16);
   }
 
-  /* =======================================================
-     TOUCH / HOVER NORMALIZATION
-     ======================================================= */
+  .service-item:nth-child(2) .service-image {
+    border-bottom-color: rgba(31, 58, 46, 0.18);
+  }
 
   .service-item:hover .service-body,
   .service-item:hover .service-number,
@@ -1902,16 +2908,12 @@ a {
     color: rgba(43, 43, 43, 0.7);
   }
 
-  .service-item:nth-child(2):hover .service-link {
-    color: var(--forest);
-  }
-
-  /* =========================================================
-   OUR WORK — MOBILE
-   ========================================================= */
+  /* -------------------------
+     Our Work
+     ------------------------- */
 
   .work-intro {
-    padding: 6rem 1.5rem 8rem;
+    padding: 6rem 1.5rem;
   }
 
   .work-intro-inner {
@@ -1941,7 +2943,7 @@ a {
   }
 
   .work-showcase {
-    padding: 0 1.5rem 6rem;
+    padding: 0 1.5rem 3.5rem;
   }
 
   .comparison-slider {
@@ -2011,10 +3013,344 @@ a {
 
     margin-top: 0.5rem;
   }
+
+  /* -------------------------
+     About
+     ------------------------- */
+
+  .about {
+    grid-template-columns: 1fr;
+
+    height: auto;
+    min-height: 0;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 260px;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 42% 38%;
+  }
+
+  .about-image:hover img {
+    transform: none;
+  }
+
+  .about-content {
+    position: relative;
+
+    padding: 2.75rem 1.5rem 2.25rem;
+
+    background: var(--forest);
+  }
+
+  .about-watermark {
+    top: -25px;
+    right: -85px;
+
+    width: 310px;
+    height: auto;
+
+    opacity: 0.04;
+
+    transform: rotate(-12deg);
+  }
+
+  .about-eyebrow {
+    margin-bottom: 0.9rem;
+  }
+
+  .about-rule {
+    width: 54px;
+
+    margin-bottom: 1.35rem;
+  }
+
+  .about-copy h2 {
+    max-width: 100%;
+
+    margin-bottom: 1.4rem;
+
+    font-size: clamp(2.75rem, 11vw, 3.55rem);
+
+    line-height: 0.96;
+  }
+
+  .about-description {
+    max-width: none;
+  }
+
+  .about-description p {
+    font-size: 0.87rem;
+    line-height: 1.62;
+  }
+
+  .about-description p + p {
+    margin-top: 0.85rem;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+
+    margin-top: 1.6rem;
+  }
+
+  .about-value {
+    min-height: 0;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 1rem;
+
+    padding: 0.85rem 0;
+
+    text-align: left;
+  }
+
+  .about-value + .about-value {
+    border-left: none;
+    border-top: 1px solid rgba(247, 244, 237, 0.16);
+  }
+
+  .about-icon {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+  }
+
+  .about-value span {
+    font-size: 0.58rem;
+
+    text-align: left;
+  }
+
+  /* -------------------------
+     Contact
+     ------------------------- */
+
+  .contact {
+    display: block;
+
+    min-height: 0;
+  }
+
+  .contact-intro {
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .contact-intro-inner {
+    width: 100%;
+
+    margin: 0;
+  }
+
+  .contact-rule {
+    margin: 1.2rem 0 2rem;
+  }
+
+  .contact-intro h2 {
+    margin-bottom: 1.75rem;
+
+    font-size: clamp(3rem, 13vw, 4rem);
+  }
+
+  .contact-lead {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .contact-details {
+    margin-top: 2.5rem;
+  }
+
+  .contact-detail {
+    gap: 1.1rem;
+
+    padding: 1.25rem 0;
+  }
+
+  .contact-detail-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-detail-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .contact-detail-value {
+    font-size: 1.25rem;
+
+    overflow-wrap: anywhere;
+  }
+
+  .contact-form-side {
+    min-height: 0;
+
+    padding: 0;
+
+    background-image: none;
+    background-color: var(--forest);
+  }
+
+  .contact-form-card {
+    width: 100%;
+
+    padding: 4rem 1.5rem;
+
+    box-shadow: none;
+  }
+
+  .contact-watermark {
+    top: -40px;
+    right: -110px;
+
+    width: 330px;
+  }
+
+  .contact-form-heading h3 {
+    margin-bottom: 2rem;
+
+    font-size: 2.8rem;
+  }
+
+  .contact-name-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .form-field input {
+    height: 62px;
+  }
+
+  .form-field textarea {
+    min-height: 150px;
+  }
+
+  .contact-submit {
+    min-height: 58px;
+
+    margin-top: 0.75rem;
+  }
+
+  /* -------------------------
+   Footer — Mobile
+   ------------------------- */
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Contact */
+
+  .footer-column,
+  .footer-logo-column {
+    min-height: 125px;
+
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Reset tablet borders */
+
+  .footer-inner > * {
+    border-left: none !important;
+    border-top: none !important;
+  }
+
+  /* Contact | Logo */
+
+  .footer-inner > *:nth-child(2) {
+    border-left: 1px solid rgba(247, 244, 237, 0.12) !important;
+  }
+
+  /* Service Area | Follow */
+
+  .footer-inner > *:nth-child(3),
+  .footer-inner > *:nth-child(4) {
+    border-top: 1px solid rgba(247, 244, 237, 0.12) !important;
+  }
+
+  .footer-inner > *:nth-child(4) {
+    border-left: 1px solid rgba(247, 244, 237, 0.12) !important;
+  }
+
+  .footer-heading {
+    margin-bottom: 0.65rem;
+
+    font-size: 0.48rem;
+  }
+
+  .footer-contact {
+    gap: 0.4rem;
+  }
+
+  .footer-contact a,
+  .footer-contact p {
+    font-size: 0.62rem;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+  }
+
+  .footer-logo-column {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-logo {
+    max-width: 115px;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Bottom copyright bar */
+
+  .footer-bottom {
+    min-height: 54px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0.75rem 1.25rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .footer-credit {
+    text-align: right;
+  }
 }
 
 /* =========================================================
-   16. REDUCED MOTION
+   15. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {

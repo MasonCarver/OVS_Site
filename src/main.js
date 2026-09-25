@@ -66,3 +66,47 @@ if (comparisonSlider && comparisonRange) {
 
   updateComparison(comparisonRange.value);
 }
+
+const menuToggle = document.querySelector(".mobile-menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+
+function openMobileMenu() {
+  menuToggle.classList.add("is-open");
+  mobileMenu.classList.add("is-open");
+  document.body.classList.add("menu-open");
+
+  menuToggle.setAttribute("aria-expanded", "true");
+  menuToggle.setAttribute("aria-label", "Close navigation menu");
+  mobileMenu.setAttribute("aria-hidden", "false");
+}
+
+function closeMobileMenu() {
+  menuToggle.classList.remove("is-open");
+  mobileMenu.classList.remove("is-open");
+  document.body.classList.remove("menu-open");
+
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+  mobileMenu.setAttribute("aria-hidden", "true");
+}
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.contains("is-open");
+
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+});
+
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});

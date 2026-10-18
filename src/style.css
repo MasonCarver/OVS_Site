@@ -99,6 +99,10 @@ textarea {
     width 0.45s var(--ease-out),
     height 0.45s var(--ease-out),
     transform 0.3s var(--ease-out);
+
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .logo:hover img {
@@ -1203,6 +1207,10 @@ textarea {
   object-position: 42% center;
 
   transition: transform 1.2s var(--ease-out);
+
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .about-image:hover img {
@@ -3371,4 +3379,74 @@ textarea {
 
     transition-duration: 0.01ms !important;
   }
+}
+
+/* =========================================================
+   FOOTER — NON-CLICKABLE CONTACT DETAILS
+   ========================================================= */
+
+.footer-contact span {
+  color: inherit;
+  font: inherit;
+}
+
+/* =========================================================
+   DEMO CONTACT FORM — STATUS MESSAGE
+   ========================================================= */
+
+.contact-demo-status {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+
+  border: 1px solid rgba(247, 244, 237, 0.25);
+
+  background: rgba(247, 244, 237, 0.08);
+  color: var(--cream);
+
+  font-size: 0.85rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.contact-demo-status[hidden] {
+  display: none;
+}
+
+.contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* =========================================================
+   CONTACT FORM — CREAM INPUT FIELDS
+   ========================================================= */
+
+.contact-form .form-field input,
+.contact-form .form-field textarea {
+  background: var(--cream);
+  color: var(--forest);
+
+  border: 1px solid rgba(247, 244, 237, 0.6);
+
+  border-radius: 0;
+}
+
+/* Placeholder text */
+.contact-form .form-field input::placeholder,
+.contact-form .form-field textarea::placeholder {
+  color: rgba(31, 58, 46, 0.55);
+}
+
+/* Focus state */
+.contact-form .form-field input:focus,
+.contact-form .form-field textarea:focus {
+  background: #ffffff;
+  border-color: var(--sage);
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+/* Keep field labels readable */
+.contact-form .form-field label {
+  color: var(--forest);
 }

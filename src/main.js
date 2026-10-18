@@ -110,3 +110,48 @@ window.addEventListener("keydown", (event) => {
     closeMobileMenu();
   }
 });
+
+/* =========================================================
+   PREVENT LINK DRAGGING
+   ========================================================= */
+
+document.addEventListener("dragstart", (event) => {
+  if (event.target.closest("a")) {
+    event.preventDefault();
+  }
+});
+
+/* =========================================================
+   DEMO CONTACT FORM — NO DATA SUBMISSION
+   ========================================================= */
+
+const demoContactForm = document.querySelector("#demo-contact-form");
+
+if (demoContactForm) {
+  const status = document.querySelector("#contact-demo-status");
+  const submitButton = demoContactForm.querySelector(".contact-submit");
+
+  demoContactForm.addEventListener("submit", (event) => {
+    // Prevent any browser submission or navigation.
+    event.preventDefault();
+
+    // Respect required fields and email validation.
+    if (!demoContactForm.reportValidity()) return;
+
+    // Prevent repeated submissions while showing confirmation.
+    submitButton.disabled = true;
+
+    status.hidden = false;
+    status.textContent = "Sending your message...";
+
+    // Simulate a brief sending delay.
+    window.setTimeout(() => {
+      demoContactForm.reset();
+
+      status.textContent =
+        "✓ Demo message sent successfully! This is a portfolio demonstration, so no information was actually transmitted or stored.";
+
+      submitButton.disabled = false;
+    }, 800);
+  });
+}

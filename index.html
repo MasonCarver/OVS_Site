@@ -113,11 +113,15 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#" class="btn btn-primary"> Get a Quote <span>→</span> </a>
+  <a href="#contact" class="btn btn-primary">
+    Get a Quote
+    <span>→</span>
+  </a>
 
-            <a href="#" class="btn btn-outline"> View Our Work </a>
-          </div>
-        </div>
+  <a href="#work" class="btn btn-outline">
+    View Our Work
+  </a>
+</div>
 
         <a
           href="#services"
@@ -373,6 +377,7 @@
     <img
       src="/images/OVL_Team.png"
       alt="Oak Valley Landscaping team"
+      draggable="false"
     />
   </div>
 
@@ -539,9 +544,9 @@
 
           <div>
             <span class="contact-detail-label">Call Us</span>
-            <a href="tel:+12095550123" class="contact-detail-value">
+            <span class="contact-detail-value">
               (209) 555-0123
-            </a>
+            </span>
           </div>
 
         </div>
@@ -561,12 +566,9 @@
 
           <div>
             <span class="contact-detail-label">Email Us</span>
-            <a
-              href="mailto:info@oakvalleylandscaping.com"
-              class="contact-detail-value"
-            >
+            <span class="contact-detail-value">
               info@oakvalleylandscaping.com
-            </a>
+            </span>
           </div>
 
         </div>
@@ -626,7 +628,7 @@
       </div>
 
 
-      <form class="contact-form">
+      <form class="contact-form" id="demo-contact-form">
 
         <div class="contact-name-row">
 
@@ -686,13 +688,21 @@
 
 
         <button type="submit" class="contact-submit">
-          <span>Send Message</span>
-          <span aria-hidden="true">→</span>
-        </button>
+  <span>Send Message</span>
+  <span aria-hidden="true">→</span>
+</button>
 
-        <p class="contact-response-note">
-          We’ll get back to you within 1–2 business days.
-        </p>
+<p class="contact-response-note">
+  Demo form — no information will be submitted or stored.
+</p>
+
+<p
+  class="contact-demo-status"
+  id="contact-demo-status"
+  role="status"
+  aria-live="polite"
+  hidden
+></p>
 
       </form>
 
@@ -712,6 +722,7 @@
         <img
           src="/images/OVL_Primary_White.png"
           alt="Oak Valley Landscaping"
+          draggable="false"
         />
       </a>
     </div>
@@ -721,10 +732,8 @@
       <p class="footer-heading">Contact</p>
 
       <div class="footer-contact">
-        <a href="tel:+12095550123">(209) 555-0123</a>
-        <a href="mailto:info@oakvalleylandscaping.com">
-          info@oakvalleylandscaping.com
-        </a>
+        <span>(209) 555-0123</span>
+        <span>info@oakvalleylandscaping.com</span>
       </div>
     </div>
 
@@ -762,7 +771,9 @@
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Oak Valley Landscaping. All rights reserved.</p>
+    <p>© 2026 Oak Valley Landscaping. All rights reserved.
+      A fictional brand created for portfolio demonstration.
+    </p>
 
     <p class="footer-credit">
       Website by

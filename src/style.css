@@ -1498,11 +1498,18 @@ textarea {
   padding: clamp(4rem, 6vw, 6rem);
 
   background:
-    linear-gradient(rgba(20, 38, 30, 0.12), rgba(20, 38, 30, 0.12)),
-    url("/images/contact-landscape.jpg");
+    linear-gradient(
+      to right,
+      var(--cream) 0%,
+      rgba(247, 244, 237, 0.75) 5%,
+      rgba(247, 244, 237, 0.25) 12%,
+      transparent 22%
+    ),
+    url("/images/contact-landscape.png");
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .contact-form-card {

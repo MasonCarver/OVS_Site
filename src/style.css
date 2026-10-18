@@ -3450,3 +3450,139 @@ textarea {
 .contact-form .form-field label {
   color: var(--forest);
 }
+
+/* =========================================================
+   FOOTER — MOBILE EMAIL OVERFLOW FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .footer-column {
+    min-width: 0;
+  }
+
+  .footer-contact {
+    min-width: 0;
+  }
+
+  .footer-contact a,
+  .footer-contact span {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
+/* =========================================================
+   MOBILE FOOTER — MATCH EMAIL & PHONE TYPOGRAPHY
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .footer-contact a,
+  .footer-contact span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #a9b3ad;
+    letter-spacing: normal;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
+
+/* =========================================================
+   FOOTER — MOBILE LAYOUT
+   Desktop layout remains unchanged
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* Stack footer sections vertically */
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* Give every section its own full-width row */
+  .footer-logo-column,
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+    border-right: none;
+  }
+
+  /* Center the Oak Valley logo */
+  .footer-logo-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* Consistent spacing for footer information */
+  .footer-column {
+    padding: 1.75rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Contact details */
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  /* Phone and email share identical typography */
+  .footer-contact a,
+  .footer-contact span,
+  .footer-contact p {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #a9b3ad;
+    letter-spacing: normal;
+    overflow-wrap: anywhere;
+  }
+
+  /* Social icons */
+  .footer-social-column {
+    padding-bottom: 2.5rem;
+  }
+
+  /* Copyright and GVD credit */
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   FOOTER — MOBILE LOGO SIZE & SPACING
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .footer-logo-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 0;
+    padding: 2rem 1.5rem 0.75rem;
+  }
+
+  .footer-logo {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+  }
+
+  .footer-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
